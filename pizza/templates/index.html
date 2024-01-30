@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block start %}
+
+
+
+<div class="container">
+
+    <h3>Pizza App</h3>
+
+    <div class="row pt-3 mt-5 pt-sm-0">
+        
+        {% for p in pizzas %}
+        <div class="col-lg-3 col-md-4 col-sm-6  mb-grid-gutter ">
+            <div class="card product-card shadow border pb-2"><a class="d-block" href="#quick-view" data-toggle="modal"><img
+                        class="card-img-top" src="/media/{{p.images}}" style="height:200px" alt="Pizza"></a>
+                <div class="card-body pt-1 pb-2">
+                    <h3 class="product-title font-size-md"><a href="#quick-view" data-toggle="modal">Pizza Vegano
+                            </a></h3>
+                    <p class="font-size-ms text-muted"> {{p.pizza_name}}
+                        </p>
+
+
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="product-price"><span class="text-accent"> ₹ {{p.price}} | {{p.category.category_name }}</span></div>
+                        <a class="btn btn-primary btn-sm" href="{% url 'add_cart' p.uid %}" type="button" data-toggle="toast"
+                            data-target="#cart-toast">+<i class="czi-cart font-size-base ml-1"></i> Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+<script>
+
+
+function createOrder(id){
+
+   axios.post('/api/order' , {'id': id})
+   .then(res =>{
+       console.log(res)
+   })
+
+}
+
+</script>
+
+
+
+
+{% endblock %}

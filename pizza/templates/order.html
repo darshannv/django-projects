@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block start %}
+
+
+
+<div class="container">
+        <h3 class="text-center mt-5">All Orders</h3>
+        <div class="table-responsive font-size-md">
+            <table class="table table-hover mt-5">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Total</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td class="py-3"><a class="nav-link-style font-weight-medium font-size-sm" href="#order-details"
+                                data-toggle="modal">{{forloop.counter}}</a></td>
+                        <td class="py-3">{{order.get_cart_total}}</td>
+                        <td class="py-3">{{order.created_at}}</td>
+                        
+
+                    </tr>
+
+                    {%  endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+{% endblock %}

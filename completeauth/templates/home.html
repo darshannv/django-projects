@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zuck.js/1.0.0/zuck.min.js" integrity="sha512-RiL8XLkxeSm8SOoUcbS9QZmNda/8YmK/4mQhbA8XooMst2SqLQ8rnb3bqVcHUKEB+xbLEIx3w+bnFJzEHf1FNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zuck.js/1.0.0/zuck.css" integrity="sha512-onJaDh4K1q0SKcFrJUYLxa/ohMeyN9Kt7yP3U4Cxyuj/RRKtFbVe1jw6d4L2nRu6x58pgBRDa7C2fgtKE0sAAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+        <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css />
+    </head>
+    <body>
+        <div class="container mt-5 pt-3 text-center">
+            <div class="mx-auto">
+                <div class="col-6">
+                
+                <div id="stories">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <style>
+            .img {
+                border-radius: 50%;
+                border: rbg(221, 18, 52);
+            }
+        </style>   
+        
+        <script>
+        var currentSkin = getCurrentSkin();
+        var stories = window.Zuck(document.querySelector('#stories'), {
+          backNative: true,
+          previousTap: true,
+          skin: currentSkin['name'],
+          autoFullScreen: currentSkin['params']['autoFullScreen'],
+          avatars: currentSkin['params']['avatars'],
+          paginationArrows: currentSkin['params']['paginationArrows'],
+          list: currentSkin['params']['list'],
+          cubeEffect: currentSkin['params']['cubeEffect'],
+          localStorage: true,
+          stories: [
+            {
+              id: 'ramon',
+              photo:
+                'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/users/1.jpg',
+              name: 'Ramon',
+              time: timestamp(),
+              items: [
+                {
+                  id: 'ramon-1',
+                  type: 'photo',
+                  length: 3,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/1.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/1.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                },
+                {
+                  id: 'ramon-2',
+                  type: 'video',
+                  length: 0,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/2.mp4',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/2.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                },
+                {
+                  id: 'ramon-3',
+                  type: 'photo',
+                  length: 3,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/3.png',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/3.png',
+                  link: 'https://ramon.codes',
+                  linkText: 'Visit my Portfolio',
+                  time: timestamp()
+                }
+              ]
+            },
+            {
+              id: 'gorillaz',
+              photo:
+                'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/users/2.jpg',
+              name: 'Gorillaz',
+              time: timestamp(),
+              items: [
+                {
+                  id: 'gorillaz-1',
+                  type: 'video',
+                  length: 0,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/4.mp4',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/4.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                },
+                {
+                  id: 'gorillaz-2',
+                  type: 'photo',
+                  length: 3,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/5.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/5.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                }
+              ]
+            },
+            {
+              id: 'ladygaga',
+              photo:
+                'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/users/3.jpg',
+              name: 'Lady Gaga',
+              time: timestamp(),
+              items: [
+                {
+                  id: 'ladygaga-1',
+                  type: 'photo',
+                  length: 5,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/6.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/6.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                },
+                {
+                  id: 'ladygaga-2',
+                  type: 'photo',
+                  length: 3,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/7.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/7.jpg',
+                  link: 'http://ladygaga.com',
+                  linkText: false,
+                  time: timestamp()
+                }
+              ]
+            },
+            {
+              id: 'starboy',
+              photo:
+                'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/users/4.jpg',
+              name: 'The Weeknd',
+              time: timestamp(),
+              items: [
+                {
+                  id: 'starboy-1',
+                  type: 'photo',
+                  length: 5,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/8.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/8.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                }
+              ]
+            },
+            {
+              id: 'riversquomo',
+              photo:
+                'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/users/5.jpg',
+              name: 'Rivers Cuomo',
+              time: timestamp(),
+              items: [
+                {
+                  id: 'riverscuomo-1',
+                  type: 'photo',
+                  length: 10,
+                  src: 'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/9.jpg',
+                  preview:
+                    'https://raw.githubusercontent.com/ramonszo/assets/master/zuck.js/stories/9.jpg',
+                  link: '',
+                  linkText: false,
+                  time: timestamp()
+                }
+              ]
+            }
+          ]
+        });
+      </script>
+
+
+    </body>
+</html>
